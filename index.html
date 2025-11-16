@@ -1,396 +1,521 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aarón Pérez • Diseño, Vídeo y Branding Profesional</title>
+  <meta name="description" content="Portafolio de Plater (Aarón Pérez). Miniaturas, edición de vídeo, logos, webs y gestión de redes. Precios claros y paquetes profesionales." />
+  <meta name="keywords" content="Plater, diseño, miniaturas, edición, logos, branding, webs, redes sociales" />
+  <meta name="author" content="Aarón Pérez" />
 
-    <title>Aarón Pérez • Portafolio Profesional</title>
+  <!-- favicon: reemplaza por tu archivo -->
+ <!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="image/plater-icon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="image/plater-icon.ico">
 
-    <!-- SEO -->
-    <meta name="description" content="Portafolio de Aarón Pérez: Miniaturas, Edición, Logos, Branding, Webs y Redes Sociales. Servicios profesionales a precios accesibles."/>
-    <meta name="keywords" content="miniaturas, diseño gráfico, logos, edición vídeo, webs, branding, social media"/>
-    <meta name="author" content="Aarón Pérez"/>
 
-    <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="image/plater-icon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="image/plater-icon.ico">
 
-    <!-- ======================== ESTILOS ======================== -->
 
-    <style>
-        :root {
-            --bg: #f5f5f5;
-            --accent: #0b2436;
-            --accent-light: #12395a;
-            --text: #222;
-            --radius: 14px;
-            --shadow: 0 8px 24px rgba(0,0,0,0.15);
-        }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: "Inter", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-        }
-        html { scroll-behavior: smooth; }
 
-        /* ---------- HEADER ---------- */
-        header {
-            background: var(--accent);
-            padding: 20px 30px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+  <!-- ====== STYLES (todo en un archivo para facilitar) ====== -->
+  <style>
+    :root{
+      --bg:#f5f6f7; --card:#ffffff; --accent:#0b2436; --accent-2:#16527a; --muted:#6b7280; --text:#0f1720; --radius:14px; --shadow:0 10px 30px rgba(2,6,23,0.08);
+    }
+    [data-theme="dark"]{ --bg:#0a0b0c; --card:#0f1113; --accent:#1f4a6b; --accent-2:#2f6fa0; --muted:#98a0a8; --text:#eef2f6; --shadow:0 10px 30px rgba(0,0,0,0.6); }
 
-        nav {
-            display: flex;
-            gap: 25px;
-        }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
+    header{background:var(--accent);color:#fff;padding:18px 28px;position:sticky;top:0;z-index:1200;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 18px rgba(0,0,0,0.18)}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand svg{width:52px;height:52px;display:block}
+    .brand h1{font-size:18px;letter-spacing:1px}
+    nav a{color:white;text-decoration:none;margin-left:18px;font-weight:600}
 
-        /* ------ MENU HAMBURGUESA ------ */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-        }
-        .hamburger div {
-            width: 28px;
-            height: 3px;
-            background: white;
-            border-radius: 6px;
-        }
+    .hero{background:linear-gradient(180deg,rgba(255,255,255,0.4),transparent);padding:0px 20px;text-align:center}
+    .hero h2{font-size:2.4rem;color:var(--accent);margin-bottom:10px}
+    .hero p{color:var(--muted);max-width:820px;margin:0 auto 18px}
+    .cta-row{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:white;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:var(--shadow);border:none;cursor:pointer}
+    .btn.secondary{background:var(--accent);color:white;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:var(--shadow);border:none;cursor:pointer}
 
-        @media (max-width: 820px) {
-            nav {
-                display: none;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                background: var(--accent);
-                width: 100%;
-                flex-direction: column;
-                padding: 20px;
-            }
-            nav a { padding: 12px 0; text-align: center; }
+    .container{max-width:1100px;margin:36px auto;padding:0 20px}
+    .section{margin-bottom:48px}
+    .section h3{text-align:center;color:var(--accent);font-size:1.9rem;margin-bottom:18px}
+    .lead{max-width:880px;margin:0 auto;color:var(--muted);text-align:center}
 
-            nav.active { display: flex; }
+    /* WHY CHOOSE */
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:24px}
+    .why-card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);text-align:left}
+    .why-card h4{margin-bottom:6px}
+    .why-card p{color:var(--muted);font-size:0.96rem}
 
-            .hamburger { display: flex; }
-        }
+    /* FLIP CARDS - SERVICES */
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+    .flip-card{perspective:1200px}
+    .flip-inner{position:relative;width:100%;height:220px;transition:transform .7s;transform-style:preserve-3d;border-radius:12px}
+    .flip-card:hover .flip-inner{transform:rotateY(180deg)}
+    .card-face{position:absolute;inset:0;border-radius:12px;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:18px}
+    .card-face.front{background:linear-gradient(180deg,var(--card),#f8fafb);box-shadow:var(--shadow)}
+    .card-face.back{background:var(--accent);color:white;transform:rotateY(180deg);text-align:center}
+    .service-icon{width:54px;height:54px;margin-bottom:10px}
+    .service-title{font-weight:700;margin-bottom:6px}
+    .service-desc{color:var(--muted);font-size:0.95rem}
+    .service-price{margin-top:10px;font-weight:800;color:var(--accent)}
+    .back-price{font-size:1.3rem;font-weight:800;margin-top:6px}
+    .back-cta{margin-top:12px;background:white;color:var(--accent);padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:700}
 
-        /* ---------- HERO ---------- */
-        .hero {
-            padding: 130px 40px 110px;
-            background: white;
-            text-align: center;
-        }
-        .hero h1 { font-size: 3rem; color: var(--accent); }
-        .hero p { margin-top: 10px; font-size: 1.25rem; }
-        .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 26px;
-            background: var(--accent);
-            color: white;
-            border-radius: var(--radius);
-            text-decoration: none;
-        }
+    /* TABLE PLANS */
+    .plans{margin-top:30px;overflow-x:auto;border-radius:12px}
+    table{width:100%;border-collapse:collapse;background:var(--card);box-shadow:var(--shadow)}
+    th,td{padding:14px 18px;border-bottom:1px solid rgba(0,0,0,0.06);text-align:left}
+    th{background:linear-gradient(90deg,rgba(11,36,54,0.95),rgba(17,54,82,0.95));color:white;font-weight:700}
 
-        /* ---------- SECCIONES ---------- */
-        .section {
-            padding: 80px 40px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        .section h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            color: var(--accent);
-            margin-bottom: 40px;
-        }
+    /* PORTFOLIO */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .portfolio-item{border-radius:12px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+    .portfolio-item img{width:100%;display:block}
 
-        /* ---------- SERVICIOS (FLIP CARDS) ---------- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
+    /* CONTACT */
+    .contact-wrapper{display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:start}
+    .contact-box{background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--shadow)}
+    form input,form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;margin-bottom:10px}
+    form button{display:inline-block}
 
-        .card {
-            width: 100%;
-            height: 200px;
-            perspective: 900px;
-        }
+    /* CTA FINAL */
+    .final-cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:30px;border-radius:12px;text-align:center;margin:30px 0}
+    .final-cta h3{margin-bottom:8px}
 
-        .card-inner {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transition: transform .8s;
-            transform-style: preserve-3d;
-        }
+    /* WHATSAPP */
+    #whatsapp{position:fixed;right:20px;bottom:22px;background:#25d366;color:#042; padding:12px 16px;border-radius:50px;font-weight:800;box-shadow:var(--shadow);text-decoration:none}
 
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
+    /* Responsive */
+    @media(max-width:900px){.contact-wrapper{grid-template-columns:1fr}.hero{padding:80px 18px}.card-face{height:auto}.flip-inner{height:240px}.brand h1{font-size:16px}}
 
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 600;
-            background: white;
-        }
+    /* Mobile: use tap to flip */
+    @media(max-width:700px){.flip-card:hover .flip-inner{transform:none}.flip-inner.flip-active{transform:rotateY(180deg)}
+    }
 
-        .card-back {
-            transform: rotateY(180deg);
-            background: var(--accent);
-            color: white;
-        }
+    /* Centrar Formulario */
+    .contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.contact-box {
+  width: 100%;
+  max-width: 500px;
+}
 
-        /* ---------- POR QUÉ ELEGIRME ---------- */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
 
-        .why-item {
-            padding: 30px;
-            background: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            font-weight: 500;
-            text-align: center;
-        }
+    /* small tweaks */
 
-        /* ---------- PORTFOLIO + LIGHTBOX ---------- */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
 
-        .portfolio-grid img {
-            width: 100%;
-            border-radius: var(--radius);
-            cursor: pointer;
-            box-shadow: var(--shadow);
-        }
 
-        /* LIGHTBOX */
-        #lightbox {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        #lightbox img {
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: var(--radius);
-        }
 
-        /* ---------- CONTACTO ---------- */
-        .contact-box {
-            background: white;
-            padding: 35px;
-            max-width: 600px;
-            margin: auto;
-            box-shadow: var(--shadow);
-            border-radius: var(--radius);
-            text-align: center;
-        }
 
-        /* ---------- FOOTER ---------- */
-        footer {
-            margin-top: 60px;
-            padding: 50px;
-            background: var(--accent);
-            color: white;
-            text-align: center;
-        }
-    </style>
+    /* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    z-index: 9999;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+
+/* FORZAR MODO CLARO SIEMPRE */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: light;
+        --bg: #f5f5f5;
+        --accent: #0b2436;
+        --accent-light: #12395a;
+        --text: #222;
+    }
+
+    body, html {
+        background: #f5f5f5 !important;
+        color: #222 !important;
+    }
+
+    header, nav, footer {
+        background: #0b2436 !important;
+        color: #fff !important;
+    }
+
+    .card-front, .card-back, .why-item, .contact-box {
+        background: white !important;
+        color: #222 !important;
+    }
+
+    .card-back {
+        background: #0b2436 !important;
+        color: white !important;
+    }
+}
+
+
+
+   
+  </style>
+
 </head>
-
-
 <body>
 
-<!-- ======================== HEADER ======================== -->
+
+
 <header>
-    <h2 style="color:white;">AP</h2>
-
-    <nav>
-        <a href="#sobre">Sobre mí</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#porqueelegirme">Por qué elegirme</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-
-    <div class="hamburger" onclick="document.querySelector('nav').classList.toggle('active')">
-        <div></div><div></div><div></div>
+  <div class="brand">
+    <!-- logo SVG (usa tu propio SVG si quieres reemplazar) -->
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <path d="M40 160 L95 50 L110 50 L110 160 Z M110 50 H150 Q180 50 180 100 Q180 150 150 160 H110 Z" fill="white"/>
+    </svg>
+    <div>
+      <h1>Aarón Pérez</h1>
+      <div class="muted">Diseño & Edición</div>
     </div>
+  </div>
+  <nav>
+    <a href="#por-que">¿Por qué elegir mis servicios?</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 </header>
 
-
-<!-- ======================== HERO ======================== -->
 <section class="hero">
-    <h1>Aarón Pérez</h1>
-    <p>Miniaturas, logos, branding, webs y edición profesional.</p>
-    <a href="#contacto" class="btn">Solicitar presupuesto</a>
+  <div class="container">
+    <h2>Diseño, edición y branding para creadores y negocios</h2>
+    <p class="lead">Creo materiales visuales que convierten: miniaturas, vídeos, logos, páginas web y gestión de redes. Trabajo rápido usando técnicas tradicionales y herramientas de IA para mantener calidad y escala.</p>
+    <div class="cta-row">
+      <a class="btn" href="#contacto">Pedir presupuesto</a>
+      <a class="btn secondary" href="#portfolio">Ver trabajos</a>
+    </div>
+  </div>
+  
 </section>
 
+<main class="container">
 
-<!-- ======================== SOBRE MÍ ======================== -->
-<section id="sobre" class="section">
-    <h2>Sobre mí</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-        Soy Aarón Pérez, creador digital especializado en diseño visual, miniaturas, logos,
-        branding, edición de vídeo y desarrollo web.  
-        Trabajo combinando creatividad con IA para entregar resultados rápidos, modernos y profesionales.
-    </p>
-</section>
+  <!-- WHY CHOOSE -->
+  <section class="section" id="por-que" >
+    <h3>¿Por qué elegir mis servicios?</h3>
+    <p class="lead">Trabajo con enfoque comercial: resultados medibles, entregas rápidas y atención personalizada. Estas son las razones por las que los clientes me deberian de elegir</p>
+    <div class="why-grid" style="margin-top:20px">
+      <div class="why-card">
+        <h4>Rapidez y eficiencia</h4>
+        <p>Entrega rápida utilizando flujos optimizados y herramientas de automatización. Ideal cuando necesitas contenido con urgencia.</p>
+      </div>
+      <div class="why-card">
+        <h4>Diseño enfocado a resultados</h4>
+        <p>No solo diseño bonito: diseño pensado para obtener clics, visualizaciones y conversión.</p>
+      </div>
+      <div class="why-card">
+        <h4>Precios transparentes</h4>
+        <p>Rangos claros para que sepas qué esperar — sin sorpresas.</p>
+      </div>
+      <div class="why-card">
+        <h4>Soporte continuo</h4>
+        <p>Asesoría y ajustes posteriores a la entrega para asegurar que el resultado funcione en tus plataformas.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- SERVICES with flip cards -->
+  <section id="servicios" class="section">
+    <h3>Servicios</h3>
+    <p class="lead">A continuación verás una descripción breve de cada servicio. Gira la tarjeta (hover en PC, toca en móvil) para ver precios y CTA rápida.</p>
 
-<!-- ======================== SERVICIOS ======================== -->
-<section id="servicios" class="section">
-    <h2>Servicios</h2>
+    <div class="services-grid" style="margin-top:18px">
 
-    <div class="services-grid">
-
-        <!-- CARD 1 -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">Miniaturas Profesionales</div>
-                <div class="card-back">Precio: 6–10 €</div>
-            </div>
+      <!-- Miniaturas -->
+      <div class="flip-card" data-service="miniaturas">
+        <div class="flip-inner">
+          <div class="card-face front">
+            <!-- icon -->
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="5" width="20" height="14" rx="2" stroke="var(--accent)" stroke-width="1.6"/><path d="M7 9h10" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <div class="service-title">Miniaturas YouTube</div>
+            <div class="service-desc">Miniaturas optimizadas para CTR y visibilidad.</div>
+            <div class="service-price">Rango: <b>5–10 €</b></div>
+          </div>
+          <div class="card-face back">
+            <div style="font-size:1.05rem;font-weight:700">Miniaturas</div>
+            <div class="back-price">5–10 €</div>
+            <div style="margin-top:8px;opacity:.9">Entrega en 24-48h · 2 revisiones</div>
+            <a class="back-cta" href="#contacto">Solicitar</a>
+          </div>
         </div>
+      </div>
 
-        <!-- CARD 2 -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">Edición de Vídeo</div>
-                <div class="card-back">Precio: 12–40 €</div>
-            </div>
+      <!-- Edición corta -->
+      <div class="flip-card" data-service="edicion-corta">
+        <div class="flip-inner">
+          <div class="card-face front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16v10H4z" stroke="var(--accent)" stroke-width="1.6"/><path d="M10 11l3-2v6l-3-2" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="service-title">Edición de vídeo corta</div>
+            <div class="service-desc">Reels, TikToks y Shorts con ritmo y estilo.</div>
+            <div class="service-price">Rango: <b>10–25 €</b></div>
+          </div>
+          <div class="card-face back">
+            <div style="font-size:1.05rem;font-weight:700">Edición corta</div>
+            <div class="back-price">10–25 €</div>
+            <div style="margin-top:8px;opacity:.9">Incluye corrección color básica · 2 revisiones</div>
+            <a class="back-cta" href="#contacto">Solicitar</a>
+          </div>
         </div>
+      </div>
 
-        <!-- CARD 3 -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">Logos y Branding</div>
-                <div class="card-back">Precio: 15–60 €</div>
-            </div>
+      <!-- Edición larga -->
+      <div class="flip-card" data-service="edicion-larga">
+        <div class="flip-inner">
+          <div class="card-face front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="16" rx="2" stroke="var(--accent)" stroke-width="1.6"/><path d="M7 9v6" stroke="var(--accent)" stroke-width="1.6"/></svg>
+            <div class="service-title">Edición largo formato</div>
+            <div class="service-desc">Videos con narrativa: cortes, sonido y títulos.</div>
+            <div class="service-price">Rango: <b>30–70 €</b></div>
+          </div>
+          <div class="card-face back">
+            <div style="font-size:1.05rem;font-weight:700">Edición larga</div>
+            <div class="back-price">30–70 €</div>
+            <div style="margin-top:8px;opacity:.9">Según duración y complejidad · presupuesto a medida</div>
+            <a class="back-cta" href="#contacto">Solicitar</a>
+          </div>
         </div>
+      </div>
 
-        <!-- CARD 4 -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">Página Web Básica</div>
-                <div class="card-back">Precio: 20–40 €</div>
-            </div>
+      <!-- Logos -->
+      <div class="flip-card" data-service="logos">
+        <div class="flip-inner">
+          <div class="card-face front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="var(--accent)" stroke-width="1.6"/><path d="M8 12h8" stroke="var(--accent)" stroke-width="1.6"/></svg>
+            <div class="service-title">Logos</div>
+            <div class="service-desc">Logos limpios y versátiles para marca personal.</div>
+            <div class="service-price">Rango: <b>20–40 €</b></div>
+          </div>
+          <div class="card-face back">
+            <div style="font-size:1.05rem;font-weight:700">Logotipo</div>
+            <div class="back-price">20–40 €</div>
+            <div style="margin-top:8px;opacity:.9">Entrega en vectores (SVG/PNG) · 2 revisiones</div>
+            <a class="back-cta" href="#contacto">Solicitar</a>
+          </div>
         </div>
+      </div>
 
-        <!-- CARD 5 -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">Gestión de Redes</div>
-                <div class="card-back">30–60 € / mes</div>
-            </div>
+      <!-- Branding -->
+      <div class="flip-card" data-service="branding">
+        <div class="flip-inner">
+          <div class="card-face front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="7" height="7" stroke="var(--accent)" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" stroke="var(--accent)" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" stroke="var(--accent)" stroke-width="1.6"/></svg>
+            <div class="service-title">Branding completo</div>
+            <div class="service-desc">Guía visual: paleta, tipografías y variaciones del logo.</div>
+            <div class="service-price">Rango: <b>50–100 €</b></div>
+          </div>
+          <div class="card-face back">
+            <div style="font-size:1.05rem;font-weight:700">Branding</div>
+            <div class="back-price">50–100 €</div>
+            <div style="margin-top:8px;opacity:.9">Incluye manual básico y variantes de logo</div>
+            <a class="back-cta" href="#contacto">Solicitar</a>
+          </div>
         </div>
+      </div>
+
+      <!-- Webs -->
+      <div class="flip-card" data-service="webs">
+        <div class="flip-inner">
+          <div class="card-face front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="14" rx="2" stroke="var(--accent)" stroke-width="1.6"/><path d="M4 10h16" stroke="var(--accent)" stroke-width="1.6"/></svg>
+            <div class="service-title">Páginas web básicas</div>
+            <div class="service-desc">Landing pages y webs estáticas optimizadas y responsive.</div>
+            <div class="service-price">Rango: <b>50–150 €</b></div>
+          </div>
+          <div class="card-face back">
+            <div style="font-size:1.05rem;font-weight:700">Web básica</div>
+            <div class="back-price">50–150 €</div>
+            <div style="margin-top:8px;opacity:.9">Hasta 300-500 € si quieres varias páginas. Hosting y dominio no incluidos · GitHub Pages recomendado</div>
+            <a class="back-cta" href="#contacto">Solicitar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RRSS -->
+      <div class="flip-card" data-service="rrss">
+        <div class="flip-inner">
+          <div class="card-face front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h5v16H4zM15 7h5v13h-5z" stroke="var(--accent)" stroke-width="1.6"/></svg>
+            <div class="service-title">Gestión de redes</div>
+            <div class="service-desc">Estrategia visual, diseños y publicación.</div>
+            <div class="service-price">Rango: <b>25–70 €/mes</b></div>
+          </div>
+          <div class="card-face back">
+            <div style="font-size:1.05rem;font-weight:700">Gestión RRSS</div>
+            <div class="back-price">25–70 €/mes</div>
+            <div style="margin-top:8px;opacity:.9">Paquetes mensuales con entregables y reportes</div>
+            <a class="back-cta" href="#contacto">Solicitar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pack creador -->
+      <div class="flip-card" data-service="pack">
+        <div class="flip-inner">
+          <div class="card-face front">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4v16" stroke="var(--accent)" stroke-width="1.6"/><path d="M4 12h16" stroke="var(--accent)" stroke-width="1.6"/></svg>
+            <div class="service-title">Pack creador</div>
+            <div class="service-desc">Todo lo que necesita un creador: miniaturas, edición y apoyo mensual.</div>
+            <div class="service-price">Rango: <b>60–150 €/mes</b></div>
+          </div>
+          <div class="card-face back">
+            <div style="font-size:1.05rem;font-weight:700">Pack creador</div>
+            <div class="back-price">60–150 €/mes</div>
+            <div style="margin-top:8px;opacity:.9">Paquetes escalables según volumen</div>
+            <a class="back-cta" href="#contacto">Solicitar</a>
+          </div>
+        </div>
+      </div>
 
     </div>
-</section>
 
-
-<!-- ======================== POR QUÉ ELEGIRME ======================== -->
-<section id="porqueelegirme" class="section">
-    <h2>¿Por qué elegirme?</h2>
-
-    <div class="why-grid">
-        <div class="why-item">Respuesta rápida</div>
-        <div class="why-item">Precios accesibles</div>
-        <div class="why-item">Diseños modernos</div>
-        <div class="why-item">Entrega profesional garantizada</div>
+    <!-- PLANS TABLE -->
+    <div class="plans">
+      <table aria-label="Planes y precios">
+        <thead>
+          <tr><th>Plan</th><th>Incluye</th><th>Precio</th><th>Ideal para</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Básico</td><td>1 miniatura + 1 edición corta (Reel/Short/TikTok)</td><td>10–20 €</td><td>Creadores nuevos que quieren algo rápido y económico</td></tr>
+          <tr><td>Pro</td><td>Pack 5 miniaturas + 3 videos cortos + logo simple + Banner</td><td>60–120 €</td><td>Canales en crecimiento que publican semanalmente</td></tr>
+          <tr><td>Marca</td><td>Branding completo + web básica</td><td>120–220 €</td><td>Pequeños negocios / marcas personales que quieren una identidad completa</td></tr>
+        </tbody>
+      </table>
     </div>
-</section>
 
+  </section>
 
-<!-- ======================== PORTFOLIO ======================== -->
+ <!-- PORTFOLIO -->
 <section id="portfolio" class="section">
-    <h2>Portfolio</h2>
-
-    <div class="portfolio-grid">
-        <img src="image/miniatura.png" onclick="openLightbox(this.src)">
-        <img src="image/logo1.png" onclick="openLightbox(this.src)">
-        <img src="image/web.png" onclick="openLightbox(this.src)">
-    </div>
-</section>
-
-<!-- LIGHTBOX -->
-<div id="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img">
+<h3>Portfolio</h3>
+<div class="portfolio-grid">
+<div class="portfolio-item"><img src="image/Miniatura.png" alt="Miniatura"></div>
+<div class="portfolio-item"><img src="image/Frutivia4.png" alt="Frutivia"></div>
+<div class="portfolio-item"><img src="image/Web.png" alt="Web"></div>
 </div>
-
-
-<!-- ======================== CONTACTO ======================== -->
-<section id="contacto" class="section">
-    <h2>Contacto</h2>
-
-    <div class="contact-box">
-        <p><b>Email:</b> aaronperez-cont@outlook.es</p>
-        <p><b>Instagram:</b> @plater.creative</p>
-        <br>
-        <a class="btn" href="mailto:aaronperez-cont@outlook.es">Enviar mensaje</a>
-    </div>
 </section>
 
+  <!-- CONTACT + FORM -->
+  <section id="contacto" class="section">
+    
+    <div class="contact-wrapper">
+      <div class="contact-box">
+        <h3>Contacto</h3>
+    <p class="lead">Escríbeme para pedir presupuesto o resolver cualquier duda. Respondo rápido y con detalle.</p>
+        <br>
+        <p><strong>Email:</strong> <a href="mailto:aaronperez-cont@outlook.es">aaronperez-cont@outlook.es</a></p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/plater.creative" target="_blank" rel="noreferrer">@plater.creative</a></p>
+        <p><strong>Tel / WhatsApp:</strong> <a href="https://wa.me/34600000000" target="_blank" rel="noreferrer">+34 600 000 000</a></p>
+        <br>
+        <p class="muted">Si prefieres, deja un mensaje detallado y te responderé con presupuesto personalizado.</p>
+        <br>
+        <h3>Pedir presupuesto</h3>
+        <br>
+        <form action="https://usebasin.com/f/888a6f7eb266" method="POST">
+          <input name="nombre" placeholder="Tu nombre" required />
+          <input name="email" type="email" placeholder="Tu correo" required />
+          <input name="servicio" placeholder="Servicio de interés (ej: Miniaturas)" />
+          <textarea name="mensaje" rows="5" placeholder="Cuéntame lo que necesitas" required></textarea>
+          <!-- Anti-spam: cambia el value por 'on' o deja como está -->
+          <input type="hidden" name="_captcha" value="false">
+          <button class="btn" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+      <br>
+      
+      </div>
+    </div>
+  </section>
 
-<footer>
-    © 2025 Aarón Pérez — Portafolio profesional.
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h3>Listo para mejorar tu presencia visual?</h3>
+    <p class="muted">Presupuestos claros, entregas rápidas y atención personalizada.</p>
+    <div style="margin-top:14px"><a class="btn" href="#contacto">Pedir presupuesto</a></div>
+  </section>
+
+</main>
+
+<footer style="padding:28px 18px;text-align:center;background:var(--card);box-shadow:var(--shadow);margin-top:20px">
+  <small>© 2025 Aarón Pérez. Todos los derechos reservados.</small>
 </footer>
 
+<!-- WHATSAPP BOTÓN FIJO -->
+<a id="whatsapp" href="https://wa.me/34600000000" target="_blank" aria-label="WhatsApp">WhatsApp</a>
 
-<!-- ======================== SCRIPTS ======================== -->
+<!-- ====== SCRIPTS: flip en móvil + observer anim ====== -->
 <script>
-function openLightbox(src){
-    const lb = document.getElementById("lightbox");
-    document.getElementById("lightbox-img").src = src;
-    lb.style.display = "flex";
-}
-function closeLightbox(){
-    document.getElementById("lightbox").style.display = "none";
-}
+  // permit toggle flip on touch devices
+  document.querySelectorAll('.flip-card').forEach(card=>{
+    card.addEventListener('click', ()=>{
+      const inner = card.querySelector('.flip-inner');
+      if(window.innerWidth <= 700){ inner.classList.toggle('flip-active'); }
+    });
+  });
+
+  // intersection observer for fading in sections
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('fade-visible'); io.unobserve(e.target); }
+    });
+  },{threshold:0.18});
+  document.querySelectorAll('section, .card-face').forEach(el=>io.observe(el));
+
+  // Optional: smooth scroll polyfill for older browsers
+
 </script>
+
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+document.querySelectorAll(".portfolio-item img").forEach(img => {
+    img.addEventListener("click", () => {
+        document.getElementById("lightbox-img").src = img.src;
+        document.getElementById("lightbox").classList.add("active");
+    });
+});
+
+document.getElementById("lightbox").addEventListener("click", () => {
+    document.getElementById("lightbox").classList.remove("active");
+});
+</script>
+
 
 </body>
 </html>
-
-
-
