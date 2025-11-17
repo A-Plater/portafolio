@@ -19,6 +19,7 @@ Esto significa que:
 ## 📩 Contacto
 Si deseas colaborar conmigo o contratar mis servicios:
 
-**Email:** (aaronperez-cont@outlook.es)  
+**Email:** aaronperez-cont@outlook.es  
 **Web:** https://a-plater.github.io/portafolio
+
 
