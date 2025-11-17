@@ -147,8 +147,52 @@
     border-radius: 14px;
     box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
+/* FORZAR MODO CLARO SIEMPRE (móvil y pc) */
+:root {
+  color-scheme: light !important;
+}
 
-   
+@media (prefers-color-scheme: dark) {
+  :root {
+      --bg:#f5f6f7 !important;
+      --card:#ffffff !important;
+      --text:#0f1720 !important;
+      --accent:#0b2436 !important;
+      --accent-2:#16527a !important;
+  }
+
+  body, html {
+      background:#f5f6f7 !important;
+      color:#0f1720 !important;
+  }
+
+  header, nav {
+      background:#0b2436 !important;
+      color:white !important;
+  }
+}
+
+
+
+/* FIX menú móvil */
+@media(max-width:700px){
+  nav {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin-top:10px;
+  }
+}
+
+    .flip-card * {
+  pointer-events:none;
+}
+.flip-card {
+  cursor:pointer;
+}
+
+    
   </style>
 
 </head>
