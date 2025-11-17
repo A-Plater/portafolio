@@ -1,4 +1,4 @@
-# Portafolio de Plater
+# Portafolio de Plater(Aarón Pérez)
 
 Este repositorio contiene mi portafolio profesional, con mis servicios, proyectos y marca personal.
 
@@ -19,5 +19,6 @@ Esto significa que:
 ## 📩 Contacto
 Si deseas colaborar conmigo o contratar mis servicios:
 
-**Email:** (tu email)  
+**Email:** (aaronperez-cont@outlook.es)  
 **Web:** https://a-plater.github.io/portafolio
+
